@@ -4,7 +4,6 @@ import type { Category } from '../data/types'
 import { ProjectCard } from './ProjectCard'
 import { Section } from './Section'
 
-// 'All' + the categories used across the projects.
 const FILTERS: Array<Category | 'All'> = [
   'All',
   'LLM & RAG',
@@ -41,10 +40,10 @@ export function Projects() {
               type="button"
               onClick={() => setActive(filter)}
               aria-pressed={isActive}
-              className={`rounded-full px-3.5 py-1.5 font-mono text-xs transition-colors ${
+              className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors ${
                 isActive
                   ? 'bg-brand text-white'
-                  : 'bg-black/5 text-neutral-600 hover:bg-black/10 dark:bg-white/10 dark:text-neutral-300 dark:hover:bg-white/20'
+                  : 'border border-slate-200 text-slate-600 hover:border-brand hover:text-brand dark:border-white/15 dark:text-slate-300 dark:hover:border-brand-light dark:hover:text-brand-light'
               }`}
             >
               {filter}
@@ -53,7 +52,7 @@ export function Projects() {
         })}
       </div>
 
-      {/* Featured projects: larger cards */}
+      {/* Featured projects */}
       {featured.length > 0 && (
         <div className="mb-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {featured.map((project) => (
@@ -72,7 +71,7 @@ export function Projects() {
       )}
 
       {visible.length === 0 && (
-        <p className="text-sm text-neutral-500">No projects in this category yet.</p>
+        <p className="text-sm text-slate-500">No projects in this category yet.</p>
       )}
     </Section>
   )

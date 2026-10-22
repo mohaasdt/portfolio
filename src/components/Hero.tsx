@@ -7,40 +7,34 @@ import {
   LinkedInIcon,
   MailIcon,
 } from './icons'
-import { RagPipeline } from './RagPipeline'
 
 export function Hero() {
   return (
     <section
       id="top"
-      className="scroll-mt-20 px-4 pt-28 pb-16 sm:px-6 sm:pt-32 lg:pb-24"
+      className="scroll-mt-16 px-4 pt-32 pb-20 sm:px-6 sm:pt-36 lg:pb-28"
     >
-      <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.4fr_1fr] lg:gap-16">
+      <div className="mx-auto grid max-w-5xl items-center gap-12 md:grid-cols-[1.5fr_1fr]">
         {/* Left: text */}
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 font-mono text-xs text-teal-700 dark:text-accent">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
+          <p className="text-sm text-slate-500 dark:text-slate-400">
             {profile.badge}
-          </span>
+          </p>
 
-          <h1 className="mt-5 text-4xl font-bold tracking-tight sm:text-5xl">
+          <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
             {profile.name}
           </h1>
-          <p className="mt-2 font-mono text-lg text-brand dark:text-brand-light">
+          <p className="mt-3 text-lg font-medium text-brand dark:text-brand-light">
             {profile.title}
           </p>
-          <p className="mt-5 max-w-xl text-neutral-600 dark:text-neutral-300">
+          <p className="mt-6 max-w-xl leading-relaxed text-slate-600 dark:text-slate-300">
             {profile.tagline}
           </p>
-
-          <div className="mt-7">
-            <RagPipeline />
-          </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-600"
+              className="inline-flex items-center gap-2 rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-navy"
             >
               See my projects
               <ArrowRightIcon className="h-4 w-4" />
@@ -48,14 +42,14 @@ export function Hero() {
             <a
               href={profile.cvPath}
               download
-              className="inline-flex items-center gap-2 rounded-lg border border-neutral-300 px-5 py-2.5 text-sm font-medium text-neutral-800 transition-colors hover:border-brand hover:text-brand dark:border-neutral-700 dark:text-neutral-100 dark:hover:border-brand-light dark:hover:text-brand-light"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:border-brand hover:text-brand dark:border-white/20 dark:text-slate-200 dark:hover:border-brand-light dark:hover:text-brand-light"
             >
               <DownloadIcon className="h-4 w-4" />
               Download CV
             </a>
           </div>
 
-          <div className="mt-6 flex items-center gap-2">
+          <div className="mt-8 flex items-center gap-1">
             <SocialLink href={profile.github} label="GitHub">
               <GitHubIcon className="h-5 w-5" />
             </SocialLink>
@@ -70,7 +64,7 @@ export function Hero() {
 
         {/* Right: photo (placeholder until public/photo.jpeg is added) */}
         <div className="justify-self-center md:justify-self-end">
-          <div className="relative aspect-square w-56 overflow-hidden rounded-3xl bg-gradient-to-br from-brand/15 to-accent/15 ring-1 ring-black/5 sm:w-64 lg:w-72 dark:ring-white/10">
+          <div className="relative aspect-square w-52 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 sm:w-60 lg:w-64 dark:border-white/10 dark:bg-white/5">
             {/* When public/photo.jpeg is ready, replace the block below with:
             <img
               src={profile.photoPath}
@@ -78,15 +72,10 @@ export function Hero() {
               className="h-full w-full object-cover"
             />
             */}
-            <div className="grid h-full w-full place-items-center text-center">
-              <div>
-                <span className="font-mono text-5xl font-bold text-brand/50 dark:text-brand-light/60">
-                  MO
-                </span>
-                <p className="mt-2 font-mono text-[10px] uppercase tracking-widest text-neutral-400">
-                  photo.jpeg
-                </p>
-              </div>
+            <div className="grid h-full w-full place-items-center">
+              <span className="text-5xl font-bold text-brand/30 dark:text-brand-light/40">
+                MO
+              </span>
             </div>
           </div>
         </div>
@@ -108,7 +97,7 @@ function SocialLink({ href, label, children }: SocialLinkProps) {
       target={href.startsWith('http') ? '_blank' : undefined}
       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
       aria-label={label}
-      className="grid h-10 w-10 place-items-center rounded-lg text-neutral-600 transition-colors hover:bg-black/5 hover:text-brand dark:text-neutral-300 dark:hover:bg-white/10 dark:hover:text-white"
+      className="grid h-10 w-10 place-items-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-brand dark:text-slate-400 dark:hover:bg-white/10 dark:hover:text-brand-light"
     >
       {children}
     </a>

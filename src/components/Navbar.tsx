@@ -22,10 +22,10 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-paper/80 backdrop-blur-md dark:border-white/10 dark:bg-neutral-950/80">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/85 backdrop-blur-md dark:border-white/10 dark:bg-navy/85">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <a href="/#top" className="flex items-center gap-2.5 font-semibold">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand font-mono text-sm text-white">
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand text-sm font-bold text-white">
             MO
           </span>
           <span className="hidden sm:inline">Mohammed Oulhadj</span>
@@ -48,7 +48,7 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
           <a
             href={profile.cvPath}
             download
-            className="hidden items-center gap-1.5 rounded-lg bg-brand px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-brand-600 sm:inline-flex"
+            className="hidden items-center gap-1.5 rounded-lg bg-brand px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-navy sm:inline-flex"
           >
             <DownloadIcon className="h-4 w-4" />
             CV
@@ -82,7 +82,7 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
               href={profile.cvPath}
               download
               onClick={() => setOpen(false)}
-              className="mt-1 inline-flex items-center gap-1.5 rounded-lg bg-brand px-3 py-2 text-sm font-medium text-white hover:bg-brand-600"
+              className="mt-1 inline-flex items-center gap-1.5 rounded-lg bg-brand px-3 py-2 text-sm font-medium text-white hover:bg-navy"
             >
               <DownloadIcon className="h-4 w-4" />
               Download CV

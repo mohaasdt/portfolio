@@ -2,11 +2,7 @@ import type { ReactNode } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ArchitectureDiagram } from '../components/ArchitectureDiagram'
 import { Badge } from '../components/Badge'
-import {
-  ArrowLeftIcon,
-  ExternalLinkIcon,
-  GitHubIcon,
-} from '../components/icons'
+import { ArrowLeftIcon, ExternalLinkIcon, GitHubIcon } from '../components/icons'
 import { getProjectBySlug } from '../data/projects'
 
 export function ProjectDetailPage() {
@@ -32,7 +28,7 @@ export function ProjectDetailPage() {
     <article className="mx-auto max-w-3xl px-4 pt-28 pb-20 sm:px-6 sm:pt-32">
       <Link
         to="/#projects"
-        className="inline-flex items-center gap-1.5 text-sm text-neutral-500 transition-colors hover:text-brand dark:hover:text-brand-light"
+        className="inline-flex items-center gap-1.5 text-sm text-slate-500 transition-colors hover:text-brand dark:hover:text-brand-light"
       >
         <ArrowLeftIcon className="h-4 w-4" />
         Back to projects
@@ -42,10 +38,10 @@ export function ProjectDetailPage() {
       <header className="mt-6">
         <div className="flex flex-wrap items-center gap-1.5">
           {project.categories.map((cat) => (
-            <Badge key={cat} label={cat} accent={cat === 'LLM & RAG'} />
+            <Badge key={cat} label={cat} />
           ))}
           {project.inProgress && (
-            <span className="inline-block rounded-md bg-amber-500/10 px-2 py-0.5 font-mono text-xs text-amber-600 dark:text-amber-400">
+            <span className="inline-block rounded-md border border-slate-300 px-2 py-0.5 text-xs text-slate-500 dark:border-white/20 dark:text-slate-400">
               In progress
             </span>
           )}
@@ -53,7 +49,7 @@ export function ProjectDetailPage() {
         <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
           {project.title}
         </h1>
-        <p className="mt-3 text-lg text-neutral-600 dark:text-neutral-300">
+        <p className="mt-3 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
           {project.summary}
         </p>
 
@@ -64,7 +60,7 @@ export function ProjectDetailPage() {
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium transition-colors hover:border-brand hover:text-brand dark:border-neutral-700 dark:hover:border-brand-light dark:hover:text-brand-light"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium transition-colors hover:border-brand hover:text-brand dark:border-white/20 dark:hover:border-brand-light dark:hover:text-brand-light"
             >
               <GitHubIcon className="h-4 w-4" />
               View code
@@ -75,7 +71,7 @@ export function ProjectDetailPage() {
               href={project.links.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-brand px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-600"
+              className="inline-flex items-center gap-2 rounded-lg bg-brand px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-navy"
             >
               <ExternalLinkIcon className="h-4 w-4" />
               Live demo
@@ -84,10 +80,10 @@ export function ProjectDetailPage() {
         </div>
       </header>
 
-      <div className="mt-10 space-y-10">
+      <div className="mt-12 space-y-10">
         {project.problem && (
           <DetailBlock title="Problem">
-            <p className="text-neutral-700 dark:text-neutral-200">
+            <p className="leading-relaxed text-slate-700 dark:text-slate-200">
               {project.problem}
             </p>
           </DetailBlock>
@@ -95,7 +91,7 @@ export function ProjectDetailPage() {
 
         {project.solution && (
           <DetailBlock title="Solution">
-            <p className="text-neutral-700 dark:text-neutral-200">
+            <p className="leading-relaxed text-slate-700 dark:text-slate-200">
               {project.solution}
             </p>
           </DetailBlock>
@@ -113,7 +109,7 @@ export function ProjectDetailPage() {
               {project.whatIBuilt.map((point) => (
                 <li
                   key={point}
-                  className="flex gap-2 text-neutral-700 dark:text-neutral-200"
+                  className="flex gap-3 leading-relaxed text-slate-700 dark:text-slate-200"
                 >
                   <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brand dark:bg-brand-light" />
                   {point}
@@ -129,9 +125,9 @@ export function ProjectDetailPage() {
               {project.resultsAndLimits.map((point) => (
                 <li
                   key={point}
-                  className="flex gap-2 text-neutral-700 dark:text-neutral-200"
+                  className="flex gap-3 leading-relaxed text-slate-700 dark:text-slate-200"
                 >
-                  <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-accent" />
+                  <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brand dark:bg-brand-light" />
                   {point}
                 </li>
               ))}
@@ -159,7 +155,7 @@ interface DetailBlockProps {
 function DetailBlock({ title, children }: DetailBlockProps) {
   return (
     <section>
-      <h2 className="font-mono text-xs uppercase tracking-widest text-accent">
+      <h2 className="text-xs font-semibold uppercase tracking-wider text-brand dark:text-brand-light">
         {title}
       </h2>
       <div className="mt-3">{children}</div>

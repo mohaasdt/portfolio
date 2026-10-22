@@ -5,7 +5,7 @@ interface SectionProps {
   kicker: string
   title: string
   children: ReactNode
-  /** Optional alternate background to separate sections visually. */
+  /** Optional light background to separate sections visually. */
   muted?: boolean
 }
 
@@ -14,18 +14,18 @@ export function Section({ id, kicker, title, children, muted = false }: SectionP
   return (
     <section
       id={id}
-      className={`scroll-mt-16 px-4 py-16 sm:px-6 lg:py-20 ${
-        muted ? 'bg-black/[0.02] dark:bg-white/[0.02]' : ''
+      className={`scroll-mt-16 px-4 py-20 sm:px-6 ${
+        muted ? 'bg-slate-50 dark:bg-white/[0.03]' : ''
       }`}
     >
-      <div className="mx-auto max-w-6xl">
-        <p className="font-mono text-xs uppercase tracking-widest text-accent">
+      <div className="mx-auto max-w-5xl">
+        <p className="text-xs font-semibold uppercase tracking-wider text-brand dark:text-brand-light">
           {kicker}
         </p>
         <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
           {title}
         </h2>
-        <div className="mt-8">{children}</div>
+        <div className="mt-10">{children}</div>
       </div>
     </section>
   )
