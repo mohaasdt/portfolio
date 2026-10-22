@@ -8,8 +8,7 @@ export const profile: Profile = {
   badge: 'Open to a PFE internship · February 2027',
   email: 'oulhadjmohamed62@gmail.com',
   github: 'https://github.com/mohaasdt',
-  // TODO: replace with your real LinkedIn profile URL.
-  linkedin: 'https://www.linkedin.com/in/mohammed-oulhadj',
+  linkedin: 'https://www.linkedin.com/in/mohammed-oulhadj-875216371/',
   cvPath: '/CV_Oulhadj_Mohammed.pdf',
   photoPath: '/photo.jpeg',
   about:
