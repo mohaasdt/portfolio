@@ -4,12 +4,13 @@ import type { Theme } from '../hooks/useTheme'
 import { CloseIcon, DownloadIcon, MenuIcon } from './icons'
 import { ThemeToggle } from './ThemeToggle'
 
+// Absolute hashes (/#id) so the links also work from a project detail page.
 const NAV_LINKS = [
-  { href: '#projects', label: 'Projects' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#about', label: 'About' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/#about', label: 'About' },
+  { href: '/#contact', label: 'Contact' },
 ]
 
 interface NavbarProps {
@@ -23,7 +24,7 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-paper/80 backdrop-blur-md dark:border-white/10 dark:bg-neutral-950/80">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <a href="#top" className="flex items-center gap-2.5 font-semibold">
+        <a href="/#top" className="flex items-center gap-2.5 font-semibold">
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand font-mono text-sm text-white">
             MO
           </span>

@@ -29,9 +29,11 @@ export interface Project {
   stack: string[]
   links: ProjectLinks
 
-  // --- Detail page fields (filled in step 5 from the GitHub READMEs) ---
+  // --- Detail page fields (from each GitHub README; numbers only if written there) ---
   problem?: string
   solution?: string
+  /** Ordered pipeline stages, rendered as a simple flow diagram. */
+  architecture?: string[]
   whatIBuilt?: string[]
   resultsAndLimits?: string[]
 }
