@@ -12,32 +12,31 @@ export function Contact() {
           or NLP, I'd love to hear from you.
         </p>
 
-        <a
-          href={`mailto:${profile.email}`}
-          className="mt-6 inline-flex items-center gap-2 rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-navy"
-        >
-          <MailIcon className="h-4 w-4" />
-          {profile.email}
-        </a>
-
-        <div className="mt-6 flex items-center gap-1">
+        <div className="mt-6 flex flex-wrap items-center gap-3">
           <a
-            href={profile.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="grid h-10 w-10 place-items-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-brand dark:text-slate-400 dark:hover:bg-white/10 dark:hover:text-brand-light"
+            href={`mailto:${profile.email}`}
+            className="inline-flex items-center gap-2 rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-navy"
           >
-            <GitHubIcon className="h-5 w-5" />
+            <MailIcon className="h-4 w-4" />
+            {profile.email}
           </a>
           <a
             href={profile.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="grid h-10 w-10 place-items-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-brand dark:text-slate-400 dark:hover:bg-white/10 dark:hover:text-brand-light"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:border-brand hover:text-brand dark:border-white/20 dark:text-slate-200 dark:hover:border-brand-light dark:hover:text-brand-light"
           >
-            <LinkedInIcon className="h-5 w-5" />
+            <LinkedInIcon className="h-4 w-4" />
+            LinkedIn
+          </a>
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:border-brand hover:text-brand dark:border-white/20 dark:text-slate-200 dark:hover:border-brand-light dark:hover:text-brand-light"
+          >
+            <GitHubIcon className="h-4 w-4" />
+            GitHub
           </a>
         </div>
       </div>
