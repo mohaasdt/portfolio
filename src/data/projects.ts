@@ -58,7 +58,6 @@ export const projects: Project[] = [
     slug: 'wattson-advisor',
     title: 'Wattson Advisor',
     featured: true,
-    inProgress: true,
     categories: ['LLM & RAG'],
     summary:
       'AI pre-sales assistant for solar PV and EV charging: qualifies customer needs, answers with RAG and cited sources, extracts electricity-bill data, and delegates sizing to a deterministic Python engine (PVGIS).',
@@ -91,7 +90,7 @@ export const projects: Project[] = [
       'FastAPI backend, React frontend, PostgreSQL/pgvector, Docker.',
     ],
     resultsAndLimits: [
-      'In progress — built during a PFA internship at Wattson Energy & Mobility.',
+      'Built during a PFA internship at Wattson Energy & Mobility.',
       'No public demo or repository yet.',
     ],
   },
